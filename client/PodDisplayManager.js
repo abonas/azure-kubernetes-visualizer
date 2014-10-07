@@ -39,6 +39,7 @@ function PodDisplayManager($container){
 
 		// Empty the current view
 		$container.empty();
+                $container.append($("<h3>").text("Minions"));
 		$('#nohost').empty();
 
 		// Create each of the hosts containers
