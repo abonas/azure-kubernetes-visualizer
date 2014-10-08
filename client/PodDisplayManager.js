@@ -88,7 +88,7 @@ function PodDisplayManager($container){
 					}
 				}
 
-				$host.append('<div id="pod-' + j + '" class="' + classes.join(' ') + '">' + innerhtml + '</div>');
+				$host.append('<div id="pod-' + j + '" class="' + classes.join(' ') + '" + " title="Pod name: ' + slug + '">' + innerhtml + '</div>');
 				j++;
 			}
 
