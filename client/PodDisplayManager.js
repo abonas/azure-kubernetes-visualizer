@@ -25,8 +25,12 @@ function PodDisplayManager($container){
 		// Get all of the different hosts
 		var hosts = {};
 		for (var p in pods) {
-			var host = (typeof pods[p].Host === 'string' ? pods[p].Host : '').split('.')[0];
-
+			var host = (typeof pods[p].Host === 'string' ? pods[p].Host : '');
+                        var temp = host.split('.');
+                        //checking if this is hostname or IPv4. If it's IP - no need to split it for display.
+                        if (temp.length != 4 || isNaN(temp[0]) || isNaN(temp[1]) || isNaN(temp[2]) || isNaN(temp[3])) {
+                                host = host.split('.')[0];
+                        }
 			if (host in hosts) {
 				hosts[host].push(pods[p]);
 			} else {
